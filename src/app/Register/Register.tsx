@@ -10,7 +10,7 @@ export const Register = () =>{
             "data":data
         }
 
-        const res = await fetch ("http://localhost:2020/std/register",{
+        const res = await fetch ("http://9am-server-zoqo.vercel.app/std/register",{
             method : 'post',
             headers: {
                 'Content-Type':'application/json'
