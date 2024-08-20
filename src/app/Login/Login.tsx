@@ -17,7 +17,9 @@ export const Login = () => {
         try {
             const res = await Ajax.sendPostReq("std/login", data) 
             if (res?.data?.length>0) {
+                if (typeof window !== 'undefined') {
                     sessionStorage.user = res?.data?.[0]?.uid
+                }
                     dispatch ({type:"LOGIN", payload:{isLoggedIn:true,uid:res?.data?.[0]?.uid}})
             } else {
                 alert("check uid and pwd")
